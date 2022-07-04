@@ -1,18 +1,22 @@
-s = 'foo'
-t = 'bar'
-s1 = list(s)
-t1 = list(t)
-z1 = []
-for i in range(0,len(t1)-1):
-    if t1[i] != s1[i] and t1[i] not in z1:
-        for j in range(0,len(s1)-1):
-            if t1[i] == s1[j]:
-                s1[j] = t1[i]
-        z1.append(t1[i])
-print(s1)
+# Given two strings s and t, determine if they are isomorphic.
+# Two strings s and t are isomorphic if the characters in s can be replaced to get t.
+# All occurrences of a character must be replaced with another character while preserving the order of characters. No two characters may map to the same character, but a character may map to itself.
+# Input: s = "egg", t = "add"
+# Output: true
 
+class Solution:
+    def isIsomorphic(self, s: str, t: str) -> bool:
 
+        if len(s) != len(t):
+            return False
+        s1 = {}
+        t1 = {}
 
-
-
-
+        for i in range(len(s)):
+            if s[i] not in s1:
+                s1[s[i]] = i
+            if t[i] not in t1:
+                t1[t[i]] = i
+            if s1[s[i]] != t1[t[i]]:
+                return False
+        return True
