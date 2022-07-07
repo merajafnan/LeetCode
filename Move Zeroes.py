@@ -5,16 +5,16 @@ k = 0
 
 d = []
 
-# for i in nums:
-#     if i != 0:
-#         d.append(i)
-#     else:
-#         k += 1
-# print(d)
-# print(k)
-# for j in range(k):
-#     d.append(0)
-# print(d)
+for i in nums:
+    if i != 0:
+        d.append(i)
+    else:
+        k += 1
+print(d)
+print(k)
+for j in range(k):
+    d.append(0)
+print(d)
 #
 # k = 0
 # d = []
